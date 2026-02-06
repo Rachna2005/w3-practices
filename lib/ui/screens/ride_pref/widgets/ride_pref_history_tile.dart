@@ -17,13 +17,14 @@ class RidePrefHistoryTile extends StatelessWidget {
   final VoidCallback onTap;
 
   String get title => "${ridePref.departure.name} → ${ridePref.arrival.name}";
-  String get subtitle => "${DateTimeUtils.formatDateTime(ridePref.departureDate)}, ${ridePref.requestedSeats} passenger${ridePref.requestedSeats>1? "s" : ""}";
+  String get subtitle =>
+      "${DateTimeUtils.formatDateTime(ridePref.departureDate)}, ${ridePref.requestedSeats} passenger${ridePref.requestedSeats > 1 ? "s" : ""}";
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      leading: Icon(Icons.history, color: BlaColors.iconLight,),
+      leading: Icon(Icons.history, color: BlaColors.iconLight),
       title: Text(
         title,
         style: BlaTextStyles.body.copyWith(color: BlaColors.textNormal),
@@ -32,7 +33,11 @@ class RidePrefHistoryTile extends StatelessWidget {
         subtitle,
         style: BlaTextStyles.label.copyWith(color: BlaColors.textLight),
       ),
-      trailing: Icon(Icons.arrow_forward_ios, color: BlaColors.iconLight, size: 16,),
+      trailing: Icon(
+        Icons.arrow_forward_ios,
+        color: BlaColors.iconLight,
+        size: 16,
+      ),
     );
   }
 }

@@ -9,7 +9,13 @@ class RidesService {
   //  filter the rides starting from given departure location
   //
   static List<Ride> _filterByDeparture(List<Ride> rides, Location departure) {
-    return [];
+    List<Ride> startDeparture = [];
+    for (int i = 0; i > rides.length; i++) {
+      if (rides[i].departureLocation == departure) {
+        startDeparture.add(rides[i].departureLocation as Ride);
+      }
+    }
+    return startDeparture;
   }
 
   //
@@ -19,13 +25,25 @@ class RidesService {
     List<Ride> rides,
     int requestedSeat,
   ) {
-    return [];
+    List<Ride> seatRequested = [];
+    for (int i = 0; i > rides.length; i++) {
+      if (rides[i].availableSeats >= requestedSeat) {
+        seatRequested.add(rides[i].availableSeats as Ride);
+      }
+    }
+    return seatRequested;
   }
 
   //
   //  filter the rides   with several optional criteria (flexible filter options)
   //
   static List<Ride> filterBy({Location? departure, int? seatRequested}) {
+    List<Ride> filterByDeparture = [];
+    List<Ride> filterSeatRequested = [];
+    List<Ride> filterBoth = [];
+    if(departure != null ){
+      
+    }
     return [];
   }
 }
